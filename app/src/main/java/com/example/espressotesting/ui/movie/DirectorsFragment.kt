@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.codingwithmitch.espressouitestexamples.R
-import kotlinx.android.synthetic.main.fragment_directors.*
+import com.example.espressotesting.R
+
 import java.lang.StringBuilder
 
 class DirectorsFragment : Fragment(){
 
     private val directors: ArrayList<String> = ArrayList()
-
+   private lateinit var directors_text:TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let { args ->
@@ -25,7 +26,10 @@ class DirectorsFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_directors, container, false)
+        val view = inflater.inflate(R.layout.fragment_directors, container, false)
+
+        directors_text=view.findViewById(R.id.directors_text)
+        return view
     }
 
 

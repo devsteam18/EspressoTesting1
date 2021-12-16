@@ -3,25 +3,22 @@ package com.example.espressotesting.ui.movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ProgressBar
 import com.bumptech.glide.request.RequestOptions
 import com.codingwithmitch.espressouitestexamples.ui.movie.MovieListFragment
 import com.example.espressotesting.R
 import com.example.espressotesting.data.source.MoviesDataSource
 import com.example.espressotesting.data.source.MoviesRemoteDataSource
+
 import com.example.espressotesting.factory.MovieFragmentFactory
 import com.example.espressotesting.ui.UICommunicationListener
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(),
     UICommunicationListener
 {
 
-    override fun loading(isLoading: Boolean) {
-        if (isLoading)
-            progress_bar.visibility = View.VISIBLE
-        else
-            progress_bar.visibility = View.INVISIBLE
-    }
+    private lateinit var  progress_bar:ProgressBar
+
 
     // dependencies (typically would be injected with dagger)
     lateinit var requestOptions: RequestOptions
@@ -36,7 +33,16 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+       progress_bar=findViewById(R.id.progress_bar)
+
         init()
+    }
+
+    override fun loading(isLoading: Boolean) {
+        if (isLoading)
+            progress_bar.visibility = View.VISIBLE
+        else
+            progress_bar.visibility = View.INVISIBLE
     }
 
     private fun init(){

@@ -11,7 +11,9 @@ import java.lang.StringBuilder
 
 class StarActorsFragment : Fragment(){
 
-    private val starActors: ArrayList<String> = ArrayList()
+    private val starActors: ArrayList<String> = ArrayList
+    lateinit var star_actors_text:android.widget.TextView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +27,10 @@ class StarActorsFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_star_actors, container, false)
+        val view = inflater.inflate(R.layout.fragment_star_actors, container, false)
+
+        star_actors_text=view.findViewById(R.id.star_actor_text)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

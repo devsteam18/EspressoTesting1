@@ -8,14 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.codingwithmitch.espressouitestexamples.R
-import com.codingwithmitch.espressouitestexamples.data.FakeMovieData.FAKE_NETWORK_DELAY
-import com.codingwithmitch.espressouitestexamples.data.Movie
-import com.codingwithmitch.espressouitestexamples.data.source.MoviesDataSource
-import com.codingwithmitch.espressouitestexamples.ui.UICommunicationListener
-import com.codingwithmitch.espressouitestingexamples.util.EspressoIdlingResource
-import com.codingwithmitch.espressouitestexamples.util.TopSpacingItemDecoration
-import kotlinx.android.synthetic.main.fragment_movie_list.*
+import androidx.recyclerview.widget.RecyclerView
+import com.example.espressotesting.R
+import com.example.espressotesting.data.FakeMovieData.FAKE_NETWORK_DELAY
+import com.example.espressotesting.data.Movie
+import com.example.espressotesting.data.source.MoviesDataSource
+import com.example.espressotesting.ui.UICommunicationListener
+import com.example.espressotesting.util.TopSpacingItemDecoration
+
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -41,13 +41,16 @@ class MovieListFragment(
 
     lateinit var listAdapter: MoviesListAdapter
     lateinit var uiCommunicationListener: UICommunicationListener
+    lateinit var recycler_view:RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_movie_list, container, false)
+        val view= inflater.inflate(R.layout.fragment_movie_list, container, false)
+        recycler_view=view.findViewById(R.id.recycler_view)
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
