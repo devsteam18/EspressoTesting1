@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
 import com.bumptech.glide.request.RequestOptions
-import com.codingwithmitch.espressouitestexamples.ui.movie.MovieListFragment
 import com.example.espressotesting.R
 import com.example.espressotesting.data.source.MoviesDataSource
 import com.example.espressotesting.data.source.MoviesRemoteDataSource
-
 import com.example.espressotesting.factory.MovieFragmentFactory
 import com.example.espressotesting.ui.UICommunicationListener
 

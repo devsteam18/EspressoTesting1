@@ -1,4 +1,4 @@
-package com.codingwithmitch.espressouitestexamples.ui.movie
+package com.example.espressotesting.ui.movie
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.espressotesting.R
-import kotlinx.android.synthetic.main.fragment_star_actors.*
 import java.lang.StringBuilder
 
 class StarActorsFragment : Fragment(){
 
-    private val starActors: ArrayList<String> = ArrayList
+    private val starActors: ArrayList<String> = ArrayList()
     lateinit var star_actors_text:android.widget.TextView
 
 
@@ -29,7 +28,7 @@ class StarActorsFragment : Fragment(){
     ): View? {
         val view = inflater.inflate(R.layout.fragment_star_actors, container, false)
 
-        star_actors_text=view.findViewById(R.id.star_actor_text)
+        star_actors_text=view.findViewById(R.id.star_actors_text)
         return view
     }
 

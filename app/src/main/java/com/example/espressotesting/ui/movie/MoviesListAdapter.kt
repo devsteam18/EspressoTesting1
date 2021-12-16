@@ -1,19 +1,20 @@
-package com.codingwithmitch.espressouitestexamples.ui.movie
+package com.example.espressotesting.ui.movie
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
-import com.codingwithmitch.espressouitestexamples.R
-import com.codingwithmitch.espressouitestexamples.data.Movie
-import com.codingwithmitch.espressouitestingexamples.util.EspressoIdlingResource
-import kotlinx.android.synthetic.main.layout_movie_list_item.view.*
+import com.example.espressotesting.R
+import com.example.espressotesting.data.Movie
+import com.example.espressotesting.util.EspressoIdlingResource
 
-class MoviesListAdapter(private val interaction: Interaction? = null) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MoviesListAdapter(private val interaction: Interaction? = null) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+
 
     val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Movie>() {
 
@@ -61,16 +62,22 @@ class MoviesListAdapter(private val interaction: Interaction? = null) :
         differ.submitList(list, dataCommitCallback)
     }
 
-    class MovieViewHolder
-    constructor(
-        itemView: View,
-        private val interaction: Interaction?
-    ) : RecyclerView.ViewHolder(itemView) {
+    class MovieViewHolder constructor(itemView: View, private val interaction: Interaction?) : RecyclerView.ViewHolder(itemView) {
+
+        lateinit var movie_title:TextView
+        lateinit var movie_star_actors:TextView
+        lateinit var movie_image:ImageView
 
         fun bind(item: Movie) = with(itemView) {
+
+
             itemView.setOnClickListener {
                 interaction?.onItemSelected(adapterPosition, item)
             }
+            movie_title=findViewById(R.id.movie_title)
+            movie_image=findViewById(R.id.movie_image)
+            movie_star_actors=findViewById(R.id.movie_star_actors)
+
             movie_title.text = item.title
             Glide.with(itemView)
                 .load(item.image)

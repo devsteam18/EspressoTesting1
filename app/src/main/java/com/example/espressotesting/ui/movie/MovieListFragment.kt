@@ -1,4 +1,4 @@
-package com.codingwithmitch.espressouitestexamples.ui.movie
+package com.example.espressotesting.ui.movie
 
 import android.content.Context
 import android.os.Bundle

@@ -2,11 +2,11 @@ package com.example.espressotesting.factory
 
 import androidx.fragment.app.FragmentFactory
 import com.bumptech.glide.request.RequestOptions
-import com.codingwithmitch.espressouitestexamples.ui.movie.DirectorsFragment
-import com.codingwithmitch.espressouitestexamples.ui.movie.MovieDetailFragment
-import com.codingwithmitch.espressouitestexamples.ui.movie.MovieListFragment
-import com.codingwithmitch.espressouitestexamples.ui.movie.StarActorsFragment
 import com.example.espressotesting.data.source.MoviesDataSource
+import com.example.espressotesting.ui.movie.DirectorsFragment
+import com.example.espressotesting.ui.movie.MovieDetailFragment
+import com.example.espressotesting.ui.movie.MovieListFragment
+import com.example.espressotesting.ui.movie.StarActorsFragment
 
 class MovieFragmentFactory(
     private val requestOptions: RequestOptions? = null,
