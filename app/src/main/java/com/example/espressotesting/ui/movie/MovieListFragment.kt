@@ -15,7 +15,7 @@ import com.example.espressotesting.data.Movie
 import com.example.espressotesting.data.source.MoviesDataSource
 import com.example.espressotesting.ui.UICommunicationListener
 import com.example.espressotesting.util.TopSpacingItemDecoration
-
+import com.example.espressotesting.util.EspressoIdlingResource
 import kotlinx.coroutines.*
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
