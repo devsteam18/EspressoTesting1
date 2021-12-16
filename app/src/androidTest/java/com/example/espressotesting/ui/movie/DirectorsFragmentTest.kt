@@ -1,4 +1,4 @@
-package com.codingwithmitch.espressouitestexamples.ui.movie
+package com.example.espressotesting.ui.movie
 
 import android.os.Bundle
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -7,9 +7,10 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import com.codingwithmitch.espressouitestexamples.ui.movie.DirectorsFragment.Companion.stringBuilderForDirectors
 import com.example.espressotesting.R
 import com.example.espressotesting.factory.MovieFragmentFactory
+import com.example.espressotesting.ui.movie.DirectorsFragment
+import com.example.espressotesting.ui.movie.DirectorsFragment.Companion.stringBuilderForDirectors
 import org.junit.Test
 
 import org.junit.runner.RunWith

@@ -1,4 +1,4 @@
-package com.codingwithmitch.espressouitestexamples.ui.movie
+package com.example.espressotesting.ui.movie
 
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.Espresso.pressBack
@@ -8,10 +8,9 @@ import androidx.test.espresso.contrib.RecyclerViewActions.*
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import com.codingwithmitch.espressouitestexamples.R
-import com.codingwithmitch.espressouitestexamples.data.FakeMovieData
-import com.codingwithmitch.espressouitestexamples.ui.movie.MoviesListAdapter.*
-import com.codingwithmitch.espressouitestexamples.util.EspressoIdlingResourceRule
+import com.example.espressotesting.R
+import com.example.espressotesting.data.FakeMovieData
+import com.example.espressotesting.util.EspressoIdlingResourceRule
 import org.hamcrest.CoreMatchers.not
 import org.junit.*
 import org.junit.runner.RunWith
@@ -43,7 +42,7 @@ class MovieListFragmentTest{
 
         // Click list item #LIST_ITEM_IN_TEST
         onView(withId(R.id.recycler_view))
-            .perform(actionOnItemAtPosition<MovieViewHolder>(LIST_ITEM_IN_TEST, click()))
+            .perform(actionOnItemAtPosition<MoviesListAdapter.MovieViewHolder>(LIST_ITEM_IN_TEST, click()))
 
         // Confirm nav to DetailFragment and display title
         onView(withId(R.id.movie_title)).check(matches(withText(MOVIE_IN_TEST.title)))
@@ -54,7 +53,7 @@ class MovieListFragmentTest{
 
         // Click list item #LIST_ITEM_IN_TEST
         onView(withId(R.id.recycler_view))
-            .perform(actionOnItemAtPosition<MovieViewHolder>(LIST_ITEM_IN_TEST, click()))
+            .perform(actionOnItemAtPosition<MoviesListAdapter.MovieViewHolder>(LIST_ITEM_IN_TEST, click()))
 
         // Confirm nav to DetailFragment and display title
         onView(withId(R.id.movie_title)).check(matches(withText(MOVIE_IN_TEST.title)))
@@ -70,7 +69,7 @@ class MovieListFragmentTest{
 
         // Click list item #LIST_ITEM_IN_TEST
         onView(withId(R.id.recycler_view))
-            .perform(actionOnItemAtPosition<MovieViewHolder>(LIST_ITEM_IN_TEST, click()))
+            .perform(actionOnItemAtPosition<MoviesListAdapter.MovieViewHolder>(LIST_ITEM_IN_TEST, click()))
 
         // Confirm nav to DetailFragment and display title
         onView(withId(R.id.movie_title)).check(matches(withText(MOVIE_IN_TEST.title)))
@@ -90,7 +89,7 @@ class MovieListFragmentTest{
 
         // Click list item #LIST_ITEM_IN_TEST
         onView(withId(R.id.recycler_view))
-            .perform(actionOnItemAtPosition<MovieViewHolder>(LIST_ITEM_IN_TEST, click()))
+            .perform(actionOnItemAtPosition<MoviesListAdapter.MovieViewHolder>(LIST_ITEM_IN_TEST, click()))
 
         // Confirm nav to DetailFragment and display title
         onView(withId(R.id.movie_title)).check(matches(withText(MOVIE_IN_TEST.title)))
