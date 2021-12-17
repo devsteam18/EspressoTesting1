@@ -43,8 +43,7 @@ jobs:
        - name: Checkout the code
          uses: actions/checkout@v2
 
-       - name: Run tests
-         run: ./gradlew test
+
 
        - name: Upload test report
          uses: actions/upload-artifact@v2
@@ -59,11 +58,7 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
       
-      - name: Run espresso tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          script: ./gradlew connectedCheck
+     
       - name: Upload test report
         uses: actions/upload-artifact@v2
         with:
